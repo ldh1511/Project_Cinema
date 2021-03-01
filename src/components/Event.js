@@ -1,12 +1,11 @@
 import React from 'react';
 import banner from '../img/banner.jpg';
-import Button from './Button';
 const Event = () => {
     return (
         <div className='event-container'>
             <div className='btn-container'>
-                <Button content='Khuyến mãi'/>
-                <Button content='Sự kiện'/>
+                <button className='btn'>Khuyến mãi</button>
+                <button className='btn'>Sự kiện</button>
             </div>
             <div className='event-box'>
                 <div className='event'>

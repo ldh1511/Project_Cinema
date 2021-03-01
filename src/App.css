@@ -94,6 +94,10 @@ header{
   width: 90px;
 }
 /* BUTTON */
+.btn-container{
+  margin: 0 50px;
+  width: fit-content;
+}
 .btn{
   padding: 10px 15px;
   font-size: 19px;
@@ -106,6 +110,9 @@ header{
   transition: all .2s;
   outline: none;
   cursor: pointer;
+}
+.btn-active{
+  background: #3968ff;
 }
 .btn:hover{
   background: #3968FF;
@@ -223,7 +230,7 @@ footer{
 }
 .footer-bottom{
   padding-top: 15px;
-    border-top: 2px solid #3968ff;
+  border-top: 2px solid #3968ff;
 }
 .footer-bottom span{
   color: #d0d0d0;
@@ -315,11 +322,14 @@ footer{
 }
 .schedule{
   display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    min-width: 10%;
-    max-width: 10%;
-    align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  min-width: 10%;
+  max-width: 10%;
+  align-items: center;
+}
+.slot:hover{
+  background: #3968FF;
 }
 .option-box{
   display: flex;
@@ -353,8 +363,8 @@ footer{
 }
 .cinema-add{
   padding: 10px;
-  min-width: 325px;
-  max-width: 325px;
+  min-width: 400px;
+  max-width: 400px;
   cursor: pointer;
 }
 .cinema-add h3{
@@ -381,6 +391,7 @@ footer{
   background: #22409E;
   border-radius: 15px;
   margin: 10px;
+  transition: all .4s;
 }
 .slot h3{
   font-size: 20px;
