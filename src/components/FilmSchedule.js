@@ -50,7 +50,7 @@ const FilmSchedule = ({ data }) => {
                     <FilmShowtimes film_cinema={film_cinema} cinema={cinema} data={data} />
                 } />
                 <Route path={"/film-schedule/cinema-showtimes"} component={() =>
-                    <CinemaShowtimes />
+                    <CinemaShowtimes cinema={cinema} film_cinema={film_cinema} film={data}/>
                 } />
             </Switch>
             <Event />
