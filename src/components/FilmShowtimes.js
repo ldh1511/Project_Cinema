@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import poster from '../img/HO00002213.jpg';
 import Film from './Film';
-const FilmShowtimes = ({ film_cinema, cinema, data }) => {
+const FilmShowtimes = ({ film_cinema, cinema, data, onClick }) => {
     let days = ['CN', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
     const [count, setCount] = useState(0);
     const [date, setDate] = useState(new Date().getDay());
@@ -14,9 +14,9 @@ const FilmShowtimes = ({ film_cinema, cinema, data }) => {
         setFilmSelect(dt);
     }
     if (filmSelect && film_cinema && cinema) {
-        let x = film_cinema.filter((ele) => ele.idFilm == filmSelect.id);
+        let x = film_cinema.filter((ele) => parseInt(ele.idFilm) === parseInt(filmSelect.id));
         x.map((ele, i) => {
-            let t = cinema.filter((e) => e.id == ele.idLocation);
+            let t = cinema.filter((e) => parseInt(e.id) === parseInt(ele.idLocation));
             return x[i] = { ...x[i], location: t[0].location, locationName: t[0].name }
         })
         let classify = filmSelect.classify.split("-");
@@ -115,7 +115,7 @@ const FilmShowtimes = ({ film_cinema, cinema, data }) => {
                                 </div>
                                 <div className="film-slot">
                                     {ele.set[date].map(el => (
-                                        <div className="slot">
+                                        <div className="slot" onClick={()=>{onClick(el)}}>
                                             <h3>{el}</h3>
                                         </div>
                                     ))}

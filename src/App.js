@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import FilmSchedule from './components/FilmSchedule';
 import axios from 'axios';
+import Order from './components/Order';
 function App() {
   const [data, setData] = useState();
   const getData = async () => {
@@ -24,6 +25,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={() => <Home data={data} />}></Route>
           <Route path='/film-schedule' component={() => <FilmSchedule data={data}/>}></Route>
+          <Route path='/order' component={Order}></Route>
         </Switch>
         <Footer />
       </div>
