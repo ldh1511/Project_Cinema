@@ -3,7 +3,8 @@ import Bill from './Bill';
 import OrderFilm from './OrderFim';
 import Price from './Price';
 import SelectSeat from './SelectSeat';
-const Order = () => {
+const Order = (prop) => {
+    const info=prop.match.params.slug.split("_");
     const [step, setStep] = useState(1);
     const [bill, setBill] = useState([]);
     const handleBill = (dt) => {
@@ -30,7 +31,7 @@ const Order = () => {
             let x = handleBill(dt)
             curBill = x;
         }
-        setBill(curBill)
+        setBill(curBill);
     }
     const handleClickStep = () => {
         setStep(step + 1);
@@ -76,7 +77,7 @@ const Order = () => {
                     <h3>Đặt vé thành công</h3>
                 </div>
             </div>
-            <OrderFilm />
+            <OrderFilm info={info} />
             {getSelect()}
             {getBill()}
         </div>

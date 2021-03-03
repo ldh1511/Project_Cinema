@@ -40,7 +40,8 @@ const FilmSchedule = ({ data }) => {
         setSlot(dt);
     }
     if (slot) {
-        return <Redirect to='/order'></Redirect>
+        console.log(slot)
+        return <Redirect to='/order/2040PM_1_1_4-3-2021'></Redirect>
     }
     else {
         return (

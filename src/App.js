@@ -24,8 +24,8 @@ function App() {
         <Header />
         <Switch>
           <Route exact path='/' component={() => <Home data={data} />}></Route>
-          <Route path='/film-schedule' component={() => <FilmSchedule data={data}/>}></Route>
-          <Route path='/order' component={Order}></Route>
+          <Route path='/film-schedule' component={() => <FilmSchedule data={data} />}></Route>
+          <Route path='/order/:slug' component={(props) => <Order {...props}/>}></Route>
         </Switch>
         <Footer />
       </div>
