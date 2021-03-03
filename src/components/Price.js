@@ -1,4 +1,4 @@
-import React, { useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 const Price = ({ price, type, handleClick }) => {
     const [amount, setAmount] = useState({
         priceTicket: price,
@@ -13,10 +13,12 @@ const Price = ({ price, type, handleClick }) => {
     }
     const handleMinus = () => {
         let curNumber = amount.number;
-        curNumber--;
-        setAmount({ ...amount, number: curNumber, total: curNumber * amount.priceTicket });
+        if (curNumber > 0) {
+            curNumber--;
+            setAmount({ ...amount, number: curNumber, total: curNumber * amount.priceTicket });
+        }
     }
-    useEffect(()=>{handleClick(amount)},[amount ])
+    useEffect(() => { handleClick(amount) }, [amount])
     return (
         <div className="price-box">
             <div className="price-type"><h3>{type}</h3></div>

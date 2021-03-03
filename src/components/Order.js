@@ -2,20 +2,60 @@ import React, { useState } from 'react';
 import Bill from './Bill';
 import OrderFilm from './OrderFim';
 import Price from './Price';
+import SelectSeat from './SelectSeat';
 const Order = () => {
-    // const [step, setStep] = useState(1);
+    const [step, setStep] = useState(1);
     const [bill, setBill] = useState([]);
-    const handleClick =(dt) => {
-        if (bill.length === 0) {
-            setBill([dt]);
+    const handleBill = (dt) => {
+        let x = bill;
+        x = x.map((ele) => { return ele = ele.type === dt.type ? dt : ele });
+        let y = x.filter((ele) => ele.type === dt.type);
+        if (y.length === 0) { x.push(dt) };
+        return x;
+    }
+    const handleClick = (dt) => {
+        let curBill = bill;
+        if (bill.length === 0 && dt.number !== 0) {
+            curBill = [dt];
+        }
+        else if (bill.length === 0 && dt.number === 0) {
+            curBill = [];
+        }
+        else if (bill.length !== 0 && dt.number === 0) {
+            let x = handleBill(dt);
+            x = x.filter((ele) => ele.number !== 0);
+            curBill = x;
         }
         else {
-            let x = bill;
-            x = x.map((ele) => { return ele = ele.type === dt.type ? dt : ele });
-            let y = x.filter((ele) => ele.type === dt.type);
-            if (y.length === 0) { x.push(dt) };
-            setBill(x);
+            let x = handleBill(dt)
+            curBill = x;
         }
+        setBill(curBill)
+    }
+    const handleClickStep = () => {
+        setStep(step + 1);
+    }
+    const getBill = () => {
+        if (bill.length !== 0) {
+            return (<div className="bill-container">
+                <Bill bill={bill} />
+                <div className="next-button">
+                    <button onClick={handleClickStep}>Chọn ghế</button>
+                </div>
+            </div>)
+        }
+        else { return <div></div> }
+    }
+    const getSelect = () => {
+        if (step === 1) {
+            return (
+                <div className="price-container">
+                    <Price price={90000} type={'standard'} handleClick={handleClick} />
+                    <Price price={149000} type={'premium'} handleClick={handleClick} />
+                </div>
+            )
+        }
+        else if (step === 2) { return (<SelectSeat />) }
     }
     return (
         <div className="order-container">
@@ -37,16 +77,8 @@ const Order = () => {
                 </div>
             </div>
             <OrderFilm />
-            <div className="price-container">
-                <Price price={90000} type={'standard'} handleClick={handleClick} />
-                <Price price={149000} type={'premium'} handleClick={handleClick} />
-            </div>
-            <div className="bill-container">
-                <Bill bill={bill} />
-                <div className="next-button">
-                    <button>Chọn ghế</button>
-                </div>
-            </div>
+            {getSelect()}
+            {getBill()}
         </div>
     )
 }
