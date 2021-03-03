@@ -1,22 +1,28 @@
 import React from "react";
-const Bill = () => {
+const Bill = ({ bill }) => {
+    const getTotal=()=>{
+        let total=bill.reduce((total, ele)=>{
+            return total+=ele.total
+        },0)
+        let amount=bill.reduce((amount, ele)=>{
+            return amount+=ele.number
+        },0)
+        return {total:total, amount: amount}
+    }
     return (
         <div className="bill-box">
-            <div className="bill-row">
-                <h4>standard</h4>
-                <h4>1</h4>
-                <h4>90.000</h4>
-            </div>
-            <div className="bill-row">
-                <h4>standard</h4>
-                <h4>1</h4>
-                <h4>90.000</h4>
-            </div>
+            {bill.map((ele, i) => (
+                <div className="bill-row" key={i}>
+                    <h4>{ele.type}</h4>
+                    <h4>{ele.number}</h4>
+                    <h4>{ele.total}</h4>
+                </div>
+            ))}
             <div className="bill-total">
                 <div className="bill-row">
                     <h4>tổng cộng</h4>
-                    <h4>2</h4>
-                    <h4>239.000</h4>
+                    <h4>{getTotal().amount}</h4>
+                    <h4>{getTotal().total}</h4>
                 </div>
             </div>
         </div>

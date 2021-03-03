@@ -8,10 +8,10 @@ const Footer = () => {
                     <img src={logo} alt=""></img>
                 </div>
                 <ul className='footer-nav'>
-                    <li><a href><i className="fab fa-facebook-f"></i></a></li>
-                    <li><a href><i className="fab fa-instagram"></i></a></li>
-                    <li><a href><i className="fab fa-twitter"></i></a></li>
-                    <li><a href><i className="fab fa-youtube"></i></a></li>
+                    <li><i className="fab fa-facebook-f" /></li>
+                    <li><i className="fab fa-instagram"></i></li>
+                    <li><i className="fab fa-twitter"></i></li>
+                    <li><i className="fab fa-youtube"></i></li>
                 </ul>
             </div>
             <div className='footer-bottom'>

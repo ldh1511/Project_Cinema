@@ -679,6 +679,8 @@ footer{
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 600;
+  flex: 1;
+  text-align: center;
 }
 .bill-total{
   background: #FAAA11;
