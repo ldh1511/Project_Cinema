@@ -77,7 +77,7 @@ const Order = (prop) => {
                     <h3>Đặt vé thành công</h3>
                 </div>
             </div>
-            <OrderFilm info={info} />
+            <OrderFilm info={info} film={prop.data} cinema={prop.cinema}/>
             {getSelect()}
             {getBill()}
         </div>

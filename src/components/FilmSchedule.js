@@ -1,31 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import Event from './Event';
 import FilmShowtimes from './FilmShowtimes';
 import { NavLink, Route, Switch, Redirect } from 'react-router-dom';
-import axios from 'axios';
 import CinemaShowtimes from './CinemaShowtimes';
-const FilmSchedule = ({ data }) => {
-    const [film_cinema, setFilmInfo] = useState();
-    const [cinema, setCinema] = useState();
+const FilmSchedule = ({ data, film_cinema, cinema }) => {
     const [slot, setSlot] = useState(null);
     const ref = useRef();
-    const getFilmInfo = async () => {
-        const url = "https://603913a8d2b9430017d23bc1.mockapi.io/film_cinema";
-        const response = await axios.get(url);
-        const dt = await response.data;
-        setFilmInfo(dt);
-    }
-    const getCinema = async () => {
-        const url = "https://603913a8d2b9430017d23bc1.mockapi.io/cinema";
-        const response = await axios.get(url);
-        const dt = await response.data;
-        setCinema(dt);
-    }
-    useEffect(() => {
-        getFilmInfo();
-        getCinema();
-        console.log("render")
-    }, [])
     const handleClick = (e) => {
         for (let i = 0; i < ref.current.childNodes.length; i++) {
             if (ref.current.childNodes[i].childNodes[0].className.includes("btn-active")) {
@@ -40,8 +20,12 @@ const FilmSchedule = ({ data }) => {
         setSlot(dt);
     }
     if (slot) {
-        console.log(slot)
-        return <Redirect to='/order/2040PM_1_1_4-3-2021'></Redirect>
+        console.log(slot);
+        let time=slot.slot.replace(":","");
+        time=time.replace(" ","");
+        let day=slot.date.getDate() +"-"+(slot.date.getMonth()+1)+"-"+slot.date.getFullYear();
+        let slug=time + "_" + slot.data.idFilm +"_"+ slot.data.idLocation+"_"+day;
+        return <Redirect to={`/order/${slug}`}></Redirect>
     }
     else {
         return (

@@ -5,6 +5,7 @@ const CinemaShowtimes = ({ cinema, film_cinema, film, onClick }) => {
     const [filmShowtime, setFilmShowtime] = useState([]);
     const [cinemaAdd, setCinema]=useState(null);
     let address = [];
+    let date = new Date();
     const handleClick = (ele) => {
         setLoc(ele)
     }
@@ -27,7 +28,7 @@ const CinemaShowtimes = ({ cinema, film_cinema, film, onClick }) => {
             return ele = { ...ele, day: newArr[i].set[day] }
         })
         setFilmShowtime(filmInfo);
-        setCinema(ele.name);
+        setCinema(ele);
     }
     if (cinema) {
         cinema.map(ele => {
@@ -75,11 +76,11 @@ const CinemaShowtimes = ({ cinema, film_cinema, film, onClick }) => {
                                                 <h4>{ele.classify.split("-")[0]}</h4>
                                             </div>
                                         </div>
-                                        <small>{cinemaAdd}</small>
+                                        <small>{cinemaAdd.name}</small>
                                     </div>
                                     <div className="film-slot">
                                         {ele.day.map((el, i) => (
-                                            <div className="slot" key={i} onClick={()=>{onClick(el)}}>
+                                            <div className="slot" key={i} onClick={()=>{onClick({data:{...ele, idFilm:ele.id, idLocation:cinemaAdd.id}, slot: el, date:date})}}>
                                                 <h3>{el}</h3>
                                             </div>
                                         ))}

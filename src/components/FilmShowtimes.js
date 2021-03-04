@@ -4,11 +4,11 @@ import Film from './Film';
 const FilmShowtimes = ({ film_cinema, cinema, data, onClick }) => {
     let days = ['CN', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
     const [count, setCount] = useState(0);
-    const [date, setDate] = useState(new Date().getDay());
+    const [date, setDate] = useState(new Date());
     const [filmSelect, setFilmSelect] = useState(data[0]);
     const ref = useRef(null);
     const getDate = (day) => {
-        setDate(day.getDay());
+        setDate(day);
     }
     const handleSelect = (dt) => {
         setFilmSelect(dt);
@@ -114,8 +114,8 @@ const FilmShowtimes = ({ film_cinema, cinema, data, onClick }) => {
                                     </div>
                                 </div>
                                 <div className="film-slot">
-                                    {ele.set[date].map(el => (
-                                        <div className="slot" onClick={()=>{onClick(el)}}>
+                                    {ele.set[date.getDay()].map(el => (
+                                        <div className="slot" onClick={()=>{onClick({data:ele, slot: el, date:date})}}>
                                             <h3>{el}</h3>
                                         </div>
                                     ))}
