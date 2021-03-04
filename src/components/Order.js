@@ -4,7 +4,7 @@ import OrderFilm from './OrderFim';
 import Price from './Price';
 import SelectSeat from './SelectSeat';
 const Order = (prop) => {
-    const info=prop.match.params.slug.split("_");
+    const info = prop.match.params.slug.split("_");
     const [step, setStep] = useState(1);
     const [bill, setBill] = useState([]);
     const handleBill = (dt) => {
@@ -56,7 +56,7 @@ const Order = (prop) => {
                 </div>
             )
         }
-        else if (step === 2) { return (<SelectSeat />) }
+        else if (step === 2) { return (<SelectSeat bill={bill} />) }
     }
     return (
         <div className="order-container">
@@ -77,7 +77,7 @@ const Order = (prop) => {
                     <h3>Đặt vé thành công</h3>
                 </div>
             </div>
-            <OrderFilm info={info} film={prop.data} cinema={prop.cinema}/>
+            <OrderFilm info={info} film={prop.data} cinema={prop.cinema} />
             {getSelect()}
             {getBill()}
         </div>
