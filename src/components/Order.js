@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import Bill from './Bill';
+import Food from './Food';
+import Information from './Information';
 import OrderFilm from './OrderFim';
 import Price from './Price';
 import SelectSeat from './SelectSeat';
+import { Redirect } from 'react-router-dom';
 const Order = (prop) => {
     const info = prop.match.params.slug.split("_");
     const [step, setStep] = useState(1);
     const [bill, setBill] = useState([]);
     const [seat, setSeat] = useState("");
+    const [food, setFood] = useState([]);
     const selectSeat = (st) => {
         setSeat(st)
     }
@@ -40,16 +44,50 @@ const Order = (prop) => {
     const handleClickStep = () => {
         setStep(step + 1);
     }
+    const handleSelectFood = (dt) => {
+        setFood(dt);
+    }
+    const getStep = () => {
+        if (step === 1) {
+            return "Chọn ghế"
+        }
+        else if (step === 2) {
+            return "Chọn đồ ăn"
+        }
+        else if (step === 3) {
+            return "Xác nhận"
+        }
+        else if (step === 4) {
+            return "Đặt vé"
+        }
+        else {
+            return "Trang chủ"
+        }
+    }
+    const getBtn = () => {
+        if (step > 5) { return <Redirect to='/'></Redirect> }
+        else {
+            return (<div className="next-button">
+                <button onClick={handleClickStep}>{getStep()}</button>
+            </div>)
+        }
+    }
     const getBill = () => {
         if (bill.length !== 0) {
             return (<div className="bill-container">
-                <Bill bill={bill} seat={seat}/>
-                <div className="next-button">
-                    <button onClick={handleClickStep}>Chọn ghế</button>
-                </div>
+                <Bill bill={bill} seat={seat} food={food} />
+                {getBtn()}
             </div>)
         }
         else { return <div></div> }
+    }
+    const getTitle = () => {
+        if (step > 4) {
+            return (<div className="confim-title">
+                <h1>đặt vé thành công</h1>
+                <p>Quý khách vui lòng đến trước giờ chiếu phim 10 phút để hoàn tất thủ tục!</p>
+            </div>)
+        }
     }
     const getSelect = () => {
         if (step === 1) {
@@ -61,9 +99,13 @@ const Order = (prop) => {
             )
         }
         else if (step === 2) {
-            return (
-                <SelectSeat bill={bill} cinema={prop.cinema} id={info[2]} selectSeat={selectSeat} />
-            )
+            return (<SelectSeat bill={bill} cinema={prop.cinema} id={info[2]} selectSeat={selectSeat} />)
+        }
+        else if (step === 3) {
+            return (<Food selectFood={handleSelectFood} />)
+        }
+        else {
+            return (<Information step={step} />)
         }
     }
     return (
@@ -85,6 +127,7 @@ const Order = (prop) => {
                     <h3>Đặt vé thành công</h3>
                 </div>
             </div>
+            {getTitle()}
             <OrderFilm info={info} film={prop.data} cinema={prop.cinema} />
             {getSelect()}
             {getBill()}

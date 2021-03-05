@@ -846,3 +846,109 @@ footer{
   background: #FF4141;
   color: white !important;
 }
+.food-container{
+  margin-top: 30px;
+  background: #22409e;
+  border-radius: 17px;
+  padding: 17px;
+  display: flex;
+  justify-content: space-around;  
+}
+.food-box{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.food-img{
+  width: 260px;
+  background: #153084;
+  padding: 20px 10px;
+  border-radius: 15px;
+}
+.food-img img{
+  width: 100%;
+  height: 100%;
+  display: block;  
+}
+.food-box h2{
+  margin-top: 15px;
+  background: #153084;
+  width: 100%;
+  border-radius: 35px;
+  text-transform: uppercase;
+}
+.food-box .price-amount{
+  margin-top: 15px;
+}
+.info-container{
+  margin-top: 30px;
+  background: #22409e;
+  border-radius: 17px;
+  padding: 17px;
+}
+.info-container h1{
+  margin-bottom: 20px;
+}
+.info-container form{
+  display: flex;
+  align-items: end;
+}
+.form-col{
+  display: flex;
+  margin-top: 15px;
+  flex-direction: column;
+  margin-right: 25px;
+  flex: 1;
+}
+.form-col .form-group{
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+.form-col .form-group label{
+  margin-right: 10px;
+  width: fit-content;
+  min-width: 100px;
+}
+.form-col .form-group input{
+  outline: none;
+  background: none;
+  background: #153084;
+  border: none;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  color: white;
+  font-weight: lighter;
+  font-family: inherit;
+  width: 80%;
+}
+.form-check-box{
+  display: flex;
+    font-size: 20px;
+    font-weight: lighter;
+}
+.form-check-box label{
+  margin-right: 10px;
+}
+.form-check-box .form-check input{
+  margin-right: 10px;
+}
+.confim-title{
+  margin-top: 30px;
+  line-height: 41px;
+  padding: 17px;
+}
+.confim-title h1{
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 700;
+}
+.confim-title p{
+  font-size: 24px;
+  font-weight: 500;
+}

@@ -8,9 +8,9 @@ const SelectSeat = ({ bill, cinema, id, selectSeat }) => {
     }
     const getCol = () => {
         let sst = alphabet.filter((ele, i) => i < getLayout()[0].layout[0]);
-        return sst.map((ele) => {
+        return sst.map((ele, i) => {
             return (
-                <span>{ele}</span>
+                <span key={i}>{ele}</span>
             )
         })
     }
@@ -25,9 +25,9 @@ const SelectSeat = ({ bill, cinema, id, selectSeat }) => {
     }
     const getSeatCol = () => {
         let seatCol = alphabet.slice(0, getLayout()[0].layout[0]);
-        return seatCol.map((ele) => {
+        return seatCol.map((ele, i) => {
             return (
-                <div className="seat-box-row" id={ele}>
+                <div className="seat-box-row" id={ele} key={i}>
                     {getSeatRow()}
                 </div>
             )
@@ -108,8 +108,8 @@ const SelectSeat = ({ bill, cinema, id, selectSeat }) => {
                 <div className="seat-select-info">
                     <h3>Tổng số ghế đã chọn : {seat.length}/{countSeat.total}</h3>
                     <p>
-                        {seat.map((ele) => {
-                            return <span>{ele.replace("_", "")}</span>
+                        {seat.map((ele, i) => {
+                            return <span key={i}>{ele.replace("_", "")}</span>
                         })}
                     </p>
                 </div>
