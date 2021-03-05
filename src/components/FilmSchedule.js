@@ -13,7 +13,7 @@ const FilmSchedule = ({ data, film_cinema, cinema }) => {
             }
         }
         if (e.target.className !== "btn-container") {
-            e.target.className = "btn btn-active"
+            e.target.className = "btn btn-active";
         }
     }
     const handleSelectTime = (dt) => {
@@ -45,7 +45,6 @@ const FilmSchedule = ({ data, film_cinema, cinema }) => {
                     <Route path={"/film-schedule/cinema-showtimes"} component={() =>
                         <CinemaShowtimes cinema={cinema} film_cinema={film_cinema} film={data} onClick={handleSelectTime} />
                     } />
-
                 </Switch>
                 <Event />
             </div>

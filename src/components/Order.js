@@ -7,6 +7,10 @@ const Order = (prop) => {
     const info = prop.match.params.slug.split("_");
     const [step, setStep] = useState(1);
     const [bill, setBill] = useState([]);
+    const [seat, setSeat] = useState("");
+    const selectSeat = (st) => {
+        setSeat(st)
+    }
     const handleBill = (dt) => {
         let x = bill;
         x = x.map((ele) => { return ele = ele.type === dt.type ? dt : ele });
@@ -39,7 +43,7 @@ const Order = (prop) => {
     const getBill = () => {
         if (bill.length !== 0) {
             return (<div className="bill-container">
-                <Bill bill={bill} />
+                <Bill bill={bill} seat={seat}/>
                 <div className="next-button">
                     <button onClick={handleClickStep}>Chọn ghế</button>
                 </div>
@@ -56,7 +60,11 @@ const Order = (prop) => {
                 </div>
             )
         }
-        else if (step === 2) { return (<SelectSeat bill={bill} />) }
+        else if (step === 2) {
+            return (
+                <SelectSeat bill={bill} cinema={prop.cinema} id={info[2]} selectSeat={selectSeat} />
+            )
+        }
     }
     return (
         <div className="order-container">

@@ -1,13 +1,21 @@
 import React from "react";
-const Bill = ({ bill }) => {
-    const getTotal=()=>{
-        let total=bill.reduce((total, ele)=>{
-            return total+=ele.total
-        },0)
-        let amount=bill.reduce((amount, ele)=>{
-            return amount+=ele.number
-        },0)
-        return {total:total, amount: amount}
+const Bill = ({ bill, seat }) => {
+    const getTotal = () => {
+        let total = bill.reduce((total, ele) => {
+            return total += ele.total
+        }, 0)
+        let amount = bill.reduce((amount, ele) => {
+            return amount += ele.number
+        }, 0)
+        return { total: total, amount: amount }
+    }
+    const getSeat = () => {
+        if (seat.length !== 0) {
+           return seat.map((ele) =>  " "+ ele.replace("_", ""))
+        }
+        else{
+            return ""
+        }
     }
     return (
         <div className="bill-box">
@@ -18,6 +26,11 @@ const Bill = ({ bill }) => {
                     <h4>{ele.total}</h4>
                 </div>
             ))}
+            <div className="bill-row">
+                <h4>Seat: </h4>
+                <h4></h4>
+                <h4>{getSeat()}</h4>
+            </div>
             <div className="bill-total">
                 <div className="bill-row">
                     <h4>tổng cộng</h4>

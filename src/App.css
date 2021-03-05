@@ -779,6 +779,10 @@ footer{
 .seat-select-info p span{
   font-size: 27px;
   font-weight: 700;
+  margin: 0 10px;
+}
+.seat-select-info p span:last-child{
+  margin-right: 0;
 }
 .seat-container-bottom{
   display: flex;
