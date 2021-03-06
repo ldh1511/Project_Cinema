@@ -20,7 +20,6 @@ const FilmSchedule = ({ data, film_cinema, cinema }) => {
         setSlot(dt);
     }
     if (slot) {
-        console.log(slot);
         let time=slot.slot.replace(":","");
         time=time.replace(" ","");
         let day=slot.date.getDate() +"-"+(slot.date.getMonth()+1)+"-"+slot.date.getFullYear();

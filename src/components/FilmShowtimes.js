@@ -99,7 +99,7 @@ const FilmShowtimes = ({ film_cinema, cinema, data, onClick }) => {
 
                         <div className="option-box">
                             {filmSelect.languages.map((ele, i) =>
-                                <div className={i === 0 ? "option option-active" : "option"}>
+                                <div className={i === 0 ? "option option-active" : "option"} key={i}>
                                     <p>{ele}</p>
                                 </div>
                             )
@@ -114,8 +114,8 @@ const FilmShowtimes = ({ film_cinema, cinema, data, onClick }) => {
                                     </div>
                                 </div>
                                 <div className="film-slot">
-                                    {ele.set[date.getDay()].map(el => (
-                                        <div className="slot" onClick={()=>{onClick({data:ele, slot: el, date:date})}}>
+                                    {ele.set[date.getDay()].map((el, j) => (
+                                        <div className="slot" key={j} onClick={()=>{onClick({data:ele, slot: el, date:date})}}>
                                             <h3>{el}</h3>
                                         </div>
                                     ))}

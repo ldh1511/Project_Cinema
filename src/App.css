@@ -532,6 +532,7 @@ footer{
   text-transform: uppercase;
   font-size: 17px;
   margin-top: 30px;
+  overflow: hidden;
 }
 .status{
   width: 20%;
@@ -541,7 +542,7 @@ footer{
 }
 .status-active{
   background: #3968FF;
-  border-radius: 35px;
+  /* border-radius: 35px; */
 }
 .order-info-film{
   display: flex;
@@ -893,7 +894,7 @@ footer{
 }
 .info-container form{
   display: flex;
-  align-items: end;
+  align-items: flex-end;
 }
 .form-col{
   display: flex;

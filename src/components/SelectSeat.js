@@ -18,7 +18,7 @@ const SelectSeat = ({ bill, cinema, id, selectSeat }) => {
         let seatArr = [];
         for (let i = 0; i < getLayout()[0].layout[1]; i++) {
             seatArr.push(
-                <div className="seat" onClick={handleSelect}><span>{i + 1}</span></div>
+                <div className="seat"  key={i} onClick={handleSelect}><span>{i + 1}</span></div>
             )
         }
         return seatArr;
@@ -47,7 +47,7 @@ const SelectSeat = ({ bill, cinema, id, selectSeat }) => {
     const [seat, setSeat] = useState([]);
     const [count, setCount] = useState(0);
     const prevSeat = useRef(seat);
-    const handleSelect = (e, x) => {
+    const handleSelect = (e) => {
         let curCount = count;
         let curSeat = seat;
         e.target.classList.add("seat-active");
@@ -75,9 +75,9 @@ const SelectSeat = ({ bill, cinema, id, selectSeat }) => {
             for (let i = 0; i < ref.current.children.length; i++) {
                 if (ref.current.children[i].id === prevSeat.current[curCount - 1].split("_")[1]) {
                     let arrChildNodes = ref.current.children[i].childNodes;
-                    for (let j = i; j < arrChildNodes.length; j++) {
+                    for (let j = 0; j < arrChildNodes.length; j++) {
                         if (arrChildNodes[j].textContent === prevSeat.current[curCount - 1].split("_")[0]) {
-                            arrChildNodes[j].childNodes[0].className = "";
+                            arrChildNodes[j].childNodes[0].classList.remove("seat-active");
                         }
                     }
                 }
@@ -86,6 +86,7 @@ const SelectSeat = ({ bill, cinema, id, selectSeat }) => {
     }
     useEffect(() => {
         prevSeat.current = seat;
+        console.log(prevSeat.current);
         selectSeat(seat);
     }, [seat]);
     return (

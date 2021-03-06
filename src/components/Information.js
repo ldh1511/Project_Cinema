@@ -1,8 +1,5 @@
-import React, { useState } from "react";
-const Information = ({ step }) => {
-    const [info, setInfo] = useState({
-        name: "", email: "", age: "", gender: ""
-    })
+import React from "react";
+const Information = ({ step, setInfo, info }) => {
     const handleInput = (e) => {
         let name = e.target.name;
         let value = e.target.value;

@@ -12,7 +12,7 @@ const Header=()=>{
                     <NavLink to='/'>Trang chủ</NavLink> 
                 </li>
                 <li>
-                    <NavLink to='/film-schedule'>Lịch chiếu</NavLink> 
+                    <NavLink to='/film-schedule/movie-showtimes'>Lịch chiếu</NavLink> 
                 </li>
                 <li>Hệ thống rạp</li>
                 <li>Khuyến mãi | Sự kiện</li>
