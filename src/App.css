@@ -75,6 +75,30 @@ header{
   color: white;
   text-decoration: none;
 }
+.banner-box{
+  position: relative;
+}
+.banner-box h1{
+  font-family: 'Warnes', cursive;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 80px;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+  width: fit-content;
+  font-weight: lighter;
+  animation: ani1 1s infinite;
+}
+@keyframes ani1{
+  from{
+    text-shadow: 0 0 3px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+  }
+  to{
+    text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+  }
+}
 .banner-box img{
   width: 100%;
   height: 100%;
@@ -1010,4 +1034,205 @@ footer{
   font-weight: lighter;
   font-size: 20px;
   padding: 0 10px 10px 10px;
+}
+
+/*---- REPONSIVE ----*/
+
+@media only screen and (max-width: 1200px) {
+  .header-nav li {
+    margin-left: 32px;
+    font-size: 23px;
+    font-weight: 500;
+  }
+  .banner-box h1{
+    font-size: 55px;
+  }
+  .film-box {
+    min-width: 200px;
+    max-width: 200px;
+  }
+  .film-box-img{
+    width: 200px;
+  }
+  .film-box-title, .bill-row h4 , .seat span {
+    font-size: 19px;
+  }
+  .event-box{
+    width: unset;
+  }
+  .event-container h1 {
+    font-size: 35px;
+  }
+  .cinema-add {
+    width: 390px;
+  }
+  .cinema-add-main, .schedule {
+    font-size: 14px;
+  }
+  .slot h3 {
+    font-size: 17px;
+  }
+  .film-content-main span, .film-classify h3 {
+    font-size: 18px;
+  }
+  .film-content-main span h4 {
+    font-weight: 600;
+  }
+  .film-classify-box {
+    padding: 5px 11px;
+  }
+  .cinema-showtimes, .order-container, .cinema-container {
+    max-width: 970px;
+  }
+  .address-box {
+    min-width: 295px;
+    max-width: 295px;
+  }
+  .cinema-add h3 {
+    font-size: 20px;
+  }
+  .address-slot-img , .order-info-img{
+    width: 130px;
+  }
+  .address-slot-info h3, .cinema-box h3 {
+    font-size: 23px;
+  }
+  .address-top-container small {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  .select-address h3, .seat-alphabet ul span, .confim-title p {
+    font-size: 24px;
+  }
+  .btn-add {
+    font-size: 15px;
+  }
+  .btn {
+    font-size: 17px;
+  }
+  .status-bar {
+    font-size: 14px;
+  }
+  .order-info-content h2 {
+    font-size: 25px;
+  }
+  .order-info-content p, 
+  .form-col .form-group, 
+  .form-col .form-group input,
+  .cinema-box p {
+    font-size: 18px;
+  }
+  .price-info {
+    margin: 0 15px;
+  }
+  .price-info h5 {
+    font-size: 20px;
+  }
+  .price-type h3 {
+    font-size: 30px;
+  }
+  .next-button button {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .bill-row {
+    line-height: 36px;
+  }
+  .food-img {
+    width: 240px;
+  }
+  .confim-title h1, .cinema-container h1 {
+    font-size: 38px;
+  }
+  .cinema-box, .cinema-box-img {
+    width: 300px;
+  }
+  .list-film-box {
+    width: 843px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .header-nav li {
+    font-size: 17px;
+  }
+  .banner-box h1 {
+    font-size: 45px;
+  }
+  .film-box {
+    min-width: 196px;
+    max-width: 196px;
+  }
+  .list-film-box {
+    width: 618px;
+  }
+  .film-container h1 {
+    font-size: 37px;
+  }
+  .film-content-main h3 {
+    font-size: 19px;
+  }
+  .film-content-main span, .film-classify h3 {
+    font-size: 16px;
+  }
+  .film-classify-box {
+    padding: 0px 11px;
+  }
+  .film-content-img {
+    width: 180px;
+  }
+  .cinema-add {
+    max-width: 270px;
+    min-width: 270px;
+  }
+  .cinema-add-main p {
+    line-height: 25px;
+  }
+  .cinema-add-main, .schedule {
+    font-size: 12px;
+  }
+  .slot {
+    padding: 5px;
+    margin: 5px;
+  }
+  .slot h3 {
+    font-size: 15px;
+  }
+  .film-slot {
+    margin-left: 14px;
+  }
+  .film-content-slot {
+    padding: 0px;
+  }
+  .status-bar {
+    font-size: 10px;
+  }
+  .cinema-showtimes, .order-container, .cinema-container {
+    max-width: 730px;
+  }
+  .order-info-film {
+    padding: 10px;
+  }
+  .address-slot-img, .order-info-img {
+    width: 120px;
+  }
+  .order-info-content h2 {
+    font-size: 24px;
+  }
+  .order-info-content p, .form-col .form-group, .form-col .form-group input, .cinema-box p, .next-button button {
+    font-size: 17px;
+  }
+  .price-info-box {
+    padding: 10px;
+  }
+  .price-info h5 {
+    font-size: 19px;
+    margin-bottom: 15px;
+  }
+  .price-type h3 {
+    font-size: 25px;
+  }
+  .bill-box {
+    width: 65%;
+    padding: 8px;
+  }
 }
