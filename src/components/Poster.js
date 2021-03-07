@@ -12,8 +12,16 @@ const Poster = ({ data, filmInfo }) => {
         name += "...";
         return name
     }
+    const onClick=()=>{
+        if(filmInfo){
+            filmInfo(data)
+        }
+        else {
+            return false;
+        }
+    }
     return (
-        <div className='film-box' onClick={() => filmInfo(data)}>
+        <div className='film-box' onClick={onClick}>
             <div className='film-box-img'>
                 <img src={poster} alt=""></img>
             </div>

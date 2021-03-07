@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React,{useRef, useState} from "react";
 import Poster from './Poster';
-const Film = ({ data, filmSelect }) => {
+const Homeslide=({ data})=>{
     const [count, setCount] = useState(0);
     const ref = useRef(null);
     const rightClick = () => {
@@ -24,6 +24,7 @@ const Film = ({ data, filmSelect }) => {
     }
     return (
         <div className='film-container'>
+            <h1>Thịnh hành</h1>
             <div className='film-bottom'>
                 <div className='btn-direct' onClick={leftClick}>
                     <i className="fas fa-angle-left"></i>
@@ -32,7 +33,7 @@ const Film = ({ data, filmSelect }) => {
                     <div ref={ref}>
                         <div className='list-film-container' >
                             {data.map((ele, i) =>
-                                <Poster data={ele} filmInfo={filmSelect} key={i} />
+                                <Poster data={ele} key={i} />
                             )}
                         </div>
                     </div>
@@ -44,4 +45,4 @@ const Film = ({ data, filmSelect }) => {
         </div>
     )
 }
-export default Film;
+export default Homeslide;

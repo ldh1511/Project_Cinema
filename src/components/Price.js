@@ -25,7 +25,7 @@ const Price = ({ price, type, handleClick }) => {
             <div className="price-info-box">
                 <div className="price-info">
                     <h5>Giá tiền</h5>
-                    <h4>{price} VNĐ</h4>
+                    <h4>{price}VNĐ</h4>
                 </div>
                 <div className="price-info">
                     <h5>Số lượng</h5>
@@ -43,7 +43,7 @@ const Price = ({ price, type, handleClick }) => {
                 </div>
                 <div className="price-info">
                     <h5>Thành tiền</h5>
-                    <h4>{amount.total} VNĐ</h4>
+                    <h4>{amount.total}VNĐ</h4>
                 </div>
             </div>
         </div>

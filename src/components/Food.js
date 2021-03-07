@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import food from './../img/food2.png';
-const Food = ({selectFood}) => {
+const Food = ({ selectFood }) => {
     const menu = [
         { name: "combo1", price: 79000, number: 0 },
         { name: "combo2", price: 129000, number: 0 },
@@ -14,12 +14,14 @@ const Food = ({selectFood}) => {
         }))
         selectFood(foodSelect);
     }
-    const handleMinus=(data)=>{
-        setFood(foodSelect.map((ele) => {
-            if (ele.name === data.name) { ele.number = ele.number - 1; }
-            return ele;
-        }))
-        selectFood(foodSelect)
+    const handleMinus = (data) => {
+        if (data.number > 0) {
+            setFood(foodSelect.map((ele) => {
+                if (ele.name === data.name) { ele.number = ele.number - 1; }
+                return ele;
+            }))
+            selectFood(foodSelect)
+        }
     }
     return (
         <div className="food-container">

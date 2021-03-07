@@ -7,6 +7,8 @@ import Home from './components/Home';
 import FilmSchedule from './components/FilmSchedule';
 import axios from 'axios';
 import Order from './components/Order';
+import Cinema from './components/Cinema';
+import ScrollToTop from './components/ScrollToTop';
 function App() {
   const [data, setData] = useState();
   const [film_cinema, setFilmInfo] = useState();
@@ -36,12 +38,14 @@ function App() {
   }, [])
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <Header />
         <Switch>
           <Route exact path='/' component={() => <Home data={data} />}></Route>
-          <Route path='/film-schedule' component={() => <FilmSchedule data={data} film_cinema={film_cinema} cinema={cinema}/>}></Route>
-          <Route path='/order/:slug' component={(props) => <Order {...props} data={data} cinema={cinema}/>}></Route>
+          <Route path='/film-schedule' component={() => <FilmSchedule data={data} film_cinema={film_cinema} cinema={cinema} />}></Route>
+          <Route path='/order/:slug' component={(props) => <Order {...props} data={data} cinema={cinema} />}></Route>
+          <Route path='/cinema' component={() => <Cinema cinema={cinema}></Cinema>}></Route>
         </Switch>
         <Footer />
       </div>

@@ -121,6 +121,11 @@ header{
   padding: 35px 45px;
   position: relative;
 }
+.film-container h1{
+  text-transform: uppercase;
+  font-size: 40px;
+  text-shadow: 0px 0px 6px rgb(255 255 255 / 70%);
+}
 .film-bottom{
   display: flex;
   justify-content: space-between;
@@ -142,13 +147,13 @@ header{
 }
 .film-box{
   text-align: center;
-    background: #1D3892;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    min-width: 290px;
-    max-width: 290px;
-    margin: 0 5px;
+  background: #1D3892;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  min-width: 290px;
+  max-width: 290px;
+  margin: 0 5px;
 }
 .film-box-img{
   width: 290px;
@@ -175,6 +180,11 @@ header{
 /* EVENT */
 .event-container{
   padding: 0 45px;
+}
+.event-container h1{
+  text-transform: uppercase;
+  font-size: 40px;
+  text-shadow: 0px 0px 6px rgb(255 255 255 / 70%);
 }
 .event-box{
   width: 1200px;
@@ -358,6 +368,7 @@ footer{
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 .film-content-slot:last-child{
   margin-bottom: 0;
@@ -599,10 +610,12 @@ footer{
   background: #FAAA11;
   border-radius: 10px;
   color: black;
+  box-shadow: rgb(250 170 17) 0px 7px 29px 0px;
 }
 .price-type h3{
   text-transform: uppercase;
   font-weight: 700;
+  font-size: 35px;
 }
 .price-info-box{
   display: flex;
@@ -617,6 +630,7 @@ footer{
   align-items: center;
   justify-content: center;
   margin: 0 60px;
+  flex: 1;
 }
 .price-info h5{
   font-size: 23px;
@@ -770,6 +784,7 @@ footer{
 }
 .seat-select-info h3{
   font-weight: 600;
+  margin-bottom: 15px;
 }
 .seat-select-info p{
   font-size: 18px;
@@ -822,7 +837,7 @@ footer{
   font-weight: 900;
   background: #22409E;
   border-radius: 35px;
-  width: 300px;
+  width: 80%;
   margin: 0 auto;
   margin-bottom: 15px;
 }
@@ -894,7 +909,6 @@ footer{
 }
 .info-container form{
   display: flex;
-  align-items: flex-end;
 }
 .form-col{
   display: flex;
@@ -930,8 +944,8 @@ footer{
 }
 .form-check-box{
   display: flex;
-    font-size: 20px;
-    font-weight: lighter;
+  font-size: 20px;
+  font-weight: lighter;
 }
 .form-check-box label{
   margin-right: 10px;
@@ -952,4 +966,48 @@ footer{
 .confim-title p{
   font-size: 24px;
   font-weight: 500;
+}
+.cinema-container{
+  padding-top: 110px;
+  max-width: 1190px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.cinema-container h1{
+  text-transform: uppercase;
+  margin-bottom: 35px;
+  font-size: 40px;
+}
+.cinema-bottom{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.cinema-box{
+  width: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 45px;
+  box-shadow: rgb(0 0 0 / 20%) 0px 7px 29px 0px;
+  cursor: pointer;
+}
+.cinema-box-img{
+  width: 350px;
+}
+.cinema-box-img img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.cinema-box h3{
+  text-transform: uppercase;
+  font-size: 25px;
+  padding: 10px;
+  text-shadow: 0px 0px 6px rgb(255 255 255 / 70%);
+}
+.cinema-box p{
+  font-weight: lighter;
+  font-size: 20px;
+  padding: 0 10px 10px 10px;
 }

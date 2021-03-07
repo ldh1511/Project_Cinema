@@ -7,11 +7,11 @@ const Bill = ({ bill, seat, food }) => {
         let amount = bill.reduce((amount, ele) => {
             return amount += ele.number
         }, 0)
-        if(food.length!==0){
-            let totalFood=food.reduce((total, ele)=>{
-                return total+=(ele.number*ele.price)
-            },0)
-            total+=totalFood;
+        if (food.length !== 0) {
+            let totalFood = food.reduce((total, ele) => {
+                return total += (ele.number * ele.price)
+            }, 0)
+            total += totalFood;
         }
         return { total: total, amount: amount }
     }
@@ -38,7 +38,7 @@ const Bill = ({ bill, seat, food }) => {
                 return true;
             })
         }
-        else{
+        else {
             return true;
         }
     }

@@ -14,7 +14,7 @@ const Header=()=>{
                 <li>
                     <NavLink to='/film-schedule/movie-showtimes'>Lịch chiếu</NavLink> 
                 </li>
-                <li>Hệ thống rạp</li>
+                <li><NavLink to='/cinema'>Hệ thống rạp</NavLink> </li>
                 <li>Khuyến mãi | Sự kiện</li>
             </ul>
         </header>

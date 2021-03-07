@@ -3,10 +3,7 @@ import banner from '../img/banner.jpg';
 const Event = () => {
     return (
         <div className='event-container'>
-            <div className='btn-container'>
-                <button className='btn'>Khuyến mãi</button>
-                <button className='btn'>Sự kiện</button>
-            </div>
+           <h1>khuyến mãi | sự kiện</h1>
             <div className='event-box'>
                 <div className='event'>
                     <img src={banner} alt=""></img>

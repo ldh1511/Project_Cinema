@@ -96,15 +96,14 @@ const FilmShowtimes = ({ film_cinema, cinema, data, onClick }) => {
                                 <i className="fas fa-angle-right"></i>
                             </div>
                         </div>
-
-                        <div className="option-box">
+                        {/* <div className="option-box">
                             {filmSelect.languages.map((ele, i) =>
                                 <div className={i === 0 ? "option option-active" : "option"} key={i}>
                                     <p>{ele}</p>
                                 </div>
                             )
                             }
-                        </div>
+                        </div> */}
                         {x.map((ele, i) => (
                             <div className="film-content-slot" key={i}>
                                 <div className="cinema-add">
