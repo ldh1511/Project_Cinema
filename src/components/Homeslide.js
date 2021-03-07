@@ -3,10 +3,11 @@ import Poster from './Poster';
 const Homeslide=({ data})=>{
     const [count, setCount] = useState(0);
     const ref = useRef(null);
+    const filmConatiner=useRef();
     const rightClick = () => {
         let number = count;
-        if (number <= (data.length - 5) * 300) {
-            number = number + 300;
+        if (number <= (data.length - 5) * getWidth()) {
+            number = number + getWidth();
         }
         else {
             number = 0;
@@ -17,10 +18,13 @@ const Homeslide=({ data})=>{
     }
     const leftClick = () => {
         let number = count;
-        if (count > 0) { number = number - 300; }
+        if (count > 0) { number = number - getWidth(); }
         setCount(number);
         ref.current.style.transform = `translateX(-${number}px)`;
         ref.current.style.transition = 'all .2s';
+    }
+    const getWidth=()=>{
+        return filmConatiner.current.childNodes[0].clientWidth + 10;
     }
     return (
         <div className='film-container'>
@@ -31,7 +35,7 @@ const Homeslide=({ data})=>{
                 </div>
                 <div className='list-film-box'>
                     <div ref={ref}>
-                        <div className='list-film-container' >
+                        <div className='list-film-container' ref={filmConatiner}>
                             {data.map((ele, i) =>
                                 <Poster data={ele} key={i} />
                             )}

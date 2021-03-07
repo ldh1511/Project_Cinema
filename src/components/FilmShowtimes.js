@@ -13,6 +13,9 @@ const FilmShowtimes = ({ film_cinema, cinema, data, onClick }) => {
     const handleSelect = (dt) => {
         setFilmSelect(dt);
     }
+    const getWidth=()=>{
+        return ref.current.childNodes[0].clientWidth
+    }
     if (filmSelect && film_cinema && cinema) {
         let x = film_cinema.filter((ele) => parseInt(ele.idFilm) === parseInt(filmSelect.id));
         x.map((ele, i) => {
@@ -28,7 +31,7 @@ const FilmShowtimes = ({ film_cinema, cinema, data, onClick }) => {
         }
         const rightClick = () => {
             let number = count;
-            number <= (dateRange.length - 10) * 115.19 ? number = number + 115.19 : number = 0;
+            number <= (dateRange.length - 10) * getWidth() ? number = number + getWidth() : number = 0;
             setCount(number);
             ref.current.style.transform = `translateX(-${number}px)`;
             ref.current.style.transition = 'all .2s';
@@ -36,7 +39,7 @@ const FilmShowtimes = ({ film_cinema, cinema, data, onClick }) => {
         const leftClick = () => {
             let number = count;
             if (count > 0) {
-                number = number - 115.19;
+                number = number - getWidth();
             }
             setCount(number);
             ref.current.style.transform = `translateX(-${number}px)`;
@@ -85,7 +88,7 @@ const FilmShowtimes = ({ film_cinema, cinema, data, onClick }) => {
                             <div className="schedule-container">
                                 <div className='schedule-box' ref={ref}>
                                     {dateRange.map((ele, i) =>
-                                        <div className='schedule' key={i} onClick={() => { getDate(ele) }} >
+                                        <div className='schedule' key={i} onClick={() => { getDate(ele) }}>
                                             <span>{days[ele.getDay()]}</span>
                                             <span>{ele.getDate() + "-" + (parseInt(ele.getMonth()) + 1)}</span>
                                         </div>

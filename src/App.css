@@ -149,6 +149,7 @@ header{
 .btn-container{
   margin: 0 50px;
   width: fit-content;
+  display: flex;
 }
 .btn{
   padding: 10px 15px;
@@ -1482,6 +1483,10 @@ footer{
   }
   .cinema-box p{
     font-size: 20px;
+  }
+  .schedule {
+    min-width: 20%;
+    max-width: 20%;
   }
 }
 @media only screen and (max-width: 497px){

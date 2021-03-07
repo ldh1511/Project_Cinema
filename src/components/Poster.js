@@ -21,7 +21,7 @@ const Poster = ({ data, filmInfo }) => {
         }
     }
     return (
-        <div className='film-box' onClick={onClick}>
+        <div className='film-box' onClick={onClick} >
             <div className='film-box-img'>
                 <img src={poster} alt=""></img>
             </div>

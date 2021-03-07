@@ -22,7 +22,7 @@ const Header = () => {
                 <li>Khuyến mãi | Sự kiện</li>
             </ul>
             <div className="right-menu" >
-                <i class="fas fa-bars" onClick={handleClick}></i>
+                <i className="fas fa-bars" onClick={handleClick}></i>
                 <ul ref={ref}>
                     <li>
                         <NavLink to='/'>Trang chủ</NavLink>
