@@ -147,7 +147,7 @@ const Order = (prop) => {
                     <h3>Xác nhận</h3>
                 </div>
                 <div className="status">
-                    <h3>Đặt vé thành công</h3>
+                    <h3>Đặt vé</h3>
                 </div>
             </div>
             {getTitle()}

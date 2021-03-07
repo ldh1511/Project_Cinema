@@ -8,7 +8,7 @@ const Home = ({ data }) => {
         if (data) {
             return (
                 <div className='home-container'>
-                    <BannerBox />
+                    <BannerBox/>
                     <Homeslide data={data}/>
                     <Event />
                 </div>
