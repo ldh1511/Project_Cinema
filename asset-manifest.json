@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/Project_Cinema/static/css/main.fb9fe75f.chunk.css",
+    "main.js": "/Project_Cinema/static/js/main.f5f39dfb.chunk.js",
+    "main.js.map": "/Project_Cinema/static/js/main.f5f39dfb.chunk.js.map",
+    "runtime-main.js": "/Project_Cinema/static/js/runtime-main.7a6e81a7.js",
+    "runtime-main.js.map": "/Project_Cinema/static/js/runtime-main.7a6e81a7.js.map",
+    "static/js/2.9e179a3e.chunk.js": "/Project_Cinema/static/js/2.9e179a3e.chunk.js",
+    "static/js/2.9e179a3e.chunk.js.map": "/Project_Cinema/static/js/2.9e179a3e.chunk.js.map",
+    "static/js/3.bcfc4aa2.chunk.js": "/Project_Cinema/static/js/3.bcfc4aa2.chunk.js",
+    "static/js/3.bcfc4aa2.chunk.js.map": "/Project_Cinema/static/js/3.bcfc4aa2.chunk.js.map",
+    "index.html": "/Project_Cinema/index.html",
+    "static/css/main.fb9fe75f.chunk.css.map": "/Project_Cinema/static/css/main.fb9fe75f.chunk.css.map",
+    "static/js/2.9e179a3e.chunk.js.LICENSE.txt": "/Project_Cinema/static/js/2.9e179a3e.chunk.js.LICENSE.txt",
+    "static/media/HO00002213.c39faa37.jpg": "/Project_Cinema/static/media/HO00002213.c39faa37.jpg",
+    "static/media/banner.4f84e192.jpg": "/Project_Cinema/static/media/banner.4f84e192.jpg",
+    "static/media/banner01.ba37dd72.jpg": "/Project_Cinema/static/media/banner01.ba37dd72.jpg",
+    "static/media/food2.b3bdb782.png": "/Project_Cinema/static/media/food2.b3bdb782.png",
+    "static/media/loading.2f005b9a.gif": "/Project_Cinema/static/media/loading.2f005b9a.gif",
+    "static/media/logo (2).2d3a1f3b.png": "/Project_Cinema/static/media/logo (2).2d3a1f3b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7a6e81a7.js",
+    "static/js/2.9e179a3e.chunk.js",
+    "static/css/main.fb9fe75f.chunk.css",
+    "static/js/main.f5f39dfb.chunk.js"
+  ]
+}
